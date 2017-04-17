@@ -90,6 +90,45 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-module-path.addPath">module app-module-path.addPath</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-module-path.addPath.addPath">
+            function <span class="apidocSignatureSpan">app-module-path.</span>addPath
+            <span class="apidocSignatureSpan">(path, parent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-module-path.enableForDir">module app-module-path.enableForDir</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-module-path.enableForDir.enableForDir">
+            function <span class="apidocSignatureSpan">app-module-path.</span>enableForDir
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-module-path.removePath">module app-module-path.removePath</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-module-path.removePath.removePath">
+            function <span class="apidocSignatureSpan">app-module-path.</span>removePath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -188,6 +227,150 @@ require(&#x27;app-module-path/register&#x27;);
 
     <h2>
         <a href="#apidoc.element.app-module-path.removePath" id="apidoc.element.app-module-path.removePath">
+        function <span class="apidocSignatureSpan">app-module-path.</span>removePath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removePath(path) {
+    function removePathHelper(targetArray) {
+        path = nodePath.normalize(path);
+        if (!targetArray) return;
+        var index = targetArray.indexOf(path);
+        if (index === -1) return;
+        targetArray.splice(index, 1);
+    }
+
+    var parent;
+    path = nodePath.normalize(path);
+    var index = appModulePaths.indexOf(path);
+
+    if (index &#x3e; -1) {
+        appModulePaths.splice(index, 1);
+        // Enable the search path for the current top-level module
+        if (require.main) removePathHelper(require.main.paths);
+        parent = module.parent;
+
+        // Also modify the paths of the module that was used to load the app-module-paths module
+        // and all of it&#x27;s parents
+        while(parent &#x26;&#x26; parent !== require.main) {
+            removePathHelper(parent.paths);
+            parent = parent.parent;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-module-path.addPath" id="apidoc.module.app-module-path.addPath">module app-module-path.addPath</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-module-path.addPath.addPath" id="apidoc.element.app-module-path.addPath.addPath">
+        function <span class="apidocSignatureSpan">app-module-path.</span>addPath
+        <span class="apidocSignatureSpan">(path, parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addPath(path, parent) {
+    // Anable app-module-path to work under any directories that are explicitly added
+    enableForDir(path);
+
+    function addPathHelper(targetArray) {
+        path = nodePath.normalize(path);
+        if (targetArray &#x26;&#x26; targetArray.indexOf(path) === -1) {
+            targetArray.push(path);
+        }
+    }
+
+    path = nodePath.normalize(path);
+
+    if (appModulePaths.indexOf(path) === -1) {
+        appModulePaths.push(path);
+        // Enable the search path for the current top-level module
+        if (require.main) {
+            addPathHelper(require.main.paths);
+        }
+
+        parent = parent || module.parent;
+
+        // Also modify the paths of the module that was used to load the app-module-paths module
+        // and all of it&#x27;s parents
+        while(parent &#x26;&#x26; parent !== require.main) {
+            addPathHelper(parent.paths);
+            parent = parent.parent;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`npm install app-module-path --save`
+
+## Usage
+```javascript
+// ***IMPORTANT**: The following line should be added to the very
+//                 beginning of your main script!
+require(&#x27;app-module-path&#x27;).<span class="apidocCodeKeywordSpan">addPath</span>(baseDir);
+```
+
+__IMPORTANT:__
+The search path should be modified before any modules are loaded!
+
+__Example:__
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-module-path.enableForDir" id="apidoc.module.app-module-path.enableForDir">module app-module-path.enableForDir</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-module-path.enableForDir.enableForDir" id="apidoc.element.app-module-path.enableForDir.enableForDir">
+        function <span class="apidocSignatureSpan">app-module-path.</span>enableForDir
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function enableForDir(dir) {
+    allowedDirs[dir] = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Explicitly enabling a directory/package
+
+By default, `app-module-path` will not attempt to resolve app modules from a directory that is found to be within a `node_modules
+` directory. This behavior can be changed by explicitly enabling `app-module-path` to work for descendent modules of a specific
+directory. For example:
+
+```javascript
+var packageDir = path.dirname(require.resolve(&#x27;installed-module-allowed&#x27;));
+require(&#x27;../&#x27;).<span class="apidocCodeKeywordSpan">enableForDir</span>(packageDir);
+```
+
+
+### ES5
+
+```javascript
+require(&#x27;app-module-path/register&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-module-path.removePath" id="apidoc.module.app-module-path.removePath">module app-module-path.removePath</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-module-path.removePath.removePath" id="apidoc.element.app-module-path.removePath.removePath">
         function <span class="apidocSignatureSpan">app-module-path.</span>removePath
         <span class="apidocSignatureSpan">(path)</span>
         </a>
