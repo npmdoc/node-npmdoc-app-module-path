@@ -1,4 +1,7 @@
-# api documentation for  [app-module-path (v2.2.0)](https://github.com/patrick-steele-idem/app-module-path-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-app-module-path.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-app-module-path) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-app-module-path.svg)](https://travis-ci.org/npmdoc/node-npmdoc-app-module-path)
+# npmdoc-app-module-path
+
+#### basic api documentation for  [app-module-path (v2.2.0)](https://github.com/patrick-steele-idem/app-module-path-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-app-module-path.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-app-module-path) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-app-module-path.svg)](https://travis-ci.org/npmdoc/node-npmdoc-app-module-path)
+
 #### Simple module to add additional directories to the Node module search for top-level app modules
 
 [![NPM](https://nodei.co/npm/app-module-path.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/app-module-path)
@@ -70,7 +73,8 @@
     "scripts": {
         "test": "node test/test.js && ./node_modules/mocha/bin/mocha test/test2.js"
     },
-    "version": "2.2.0"
+    "version": "2.2.0",
+    "bin": {}
 }
 ```
 

@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "app-module-path",
-    "description": "api documentation for [app-module-path (v2.2.0)](https://github.com/patrick-steele-idem/app-module-path-node) [![npm package](https://img.shields.io/npm/v/npmdoc-app-module-path.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-app-module-path) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-app-module-path.svg)](https://travis-ci.org/npmdoc/node-npmdoc-app-module-path)",
+    "description": "#### basic api documentation for  [app-module-path (v2.2.0)](https://github.com/patrick-steele-idem/app-module-path-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-app-module-path.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-app-module-path) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-app-module-path.svg)](https://travis-ci.org/npmdoc/node-npmdoc-app-module-path)",
     "devDependencies": {
         "app-module-path": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
