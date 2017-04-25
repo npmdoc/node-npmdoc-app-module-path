@@ -1,21 +1,21 @@
 <svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="286" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-17 15:25:40 +0000    13826 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-17 15:25:40 +0000     5024 bytes  README.md</tspan>
-<tspan x="10" y="58">  2.  2017-04-17 15:25:40 +0000      233 bytes  cwd.js</tspan>
-<tspan x="10" y="74">  3.  2017-04-17 15:25:40 +0000     2962 bytes  lib/index.js</tspan>
-<tspan x="10" y="90">  4.  2017-04-17 15:25:40 +0000     2817 bytes  package.json</tspan>
-<tspan x="10" y="106">  5.  2017-04-17 15:25:40 +0000      305 bytes  register.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-17 15:25:40 +0000      112 bytes  test/src/installed-module.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-17 15:25:40 +0000      218 bytes  test/src/module-a/lib/index.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-17 15:25:40 +0000       27 bytes  test/src/module-a/package.json</tspan>
-<tspan x="10" y="170">  9.  2017-04-17 15:25:40 +0000       73 bytes  test/src/module-b/index.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-17 15:25:40 +0000       74 bytes  test/src/module-c/index.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-17 15:25:40 +0000       74 bytes  test/src/module-d/index.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-17 15:25:40 +0000       21 bytes  test/src/package.json</tspan>
-<tspan x="10" y="234"> 13.  2017-04-17 15:25:40 +0000      221 bytes  test/test-helper-code.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-17 15:25:40 +0000      327 bytes  test/test.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-17 15:25:40 +0000     1338 bytes  test/test2.js</tspan>
+<tspan x="10" y="26">  0.  2017-04-25 09:51:12 +0000    13826 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-25 09:51:12 +0000     5024 bytes  README.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-25 09:51:12 +0000      233 bytes  cwd.js</tspan>
+<tspan x="10" y="74">  3.  2017-04-25 09:51:12 +0000     2962 bytes  lib/index.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-25 09:51:12 +0000     2817 bytes  package.json</tspan>
+<tspan x="10" y="106">  5.  2017-04-25 09:51:12 +0000      305 bytes  register.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-25 09:51:12 +0000      112 bytes  test/src/installed-module.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-25 09:51:12 +0000      218 bytes  test/src/module-a/lib/index.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-25 09:51:12 +0000       27 bytes  test/src/module-a/package.json</tspan>
+<tspan x="10" y="170">  9.  2017-04-25 09:51:12 +0000       73 bytes  test/src/module-b/index.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-25 09:51:12 +0000       74 bytes  test/src/module-c/index.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-25 09:51:12 +0000       74 bytes  test/src/module-d/index.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-25 09:51:12 +0000       21 bytes  test/src/package.json</tspan>
+<tspan x="10" y="234"> 13.  2017-04-25 09:51:12 +0000      221 bytes  test/test-helper-code.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-25 09:51:12 +0000      327 bytes  test/test.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-25 09:51:12 +0000     1338 bytes  test/test2.js</tspan>
 </text>
 </svg>
